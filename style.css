@@ -90,31 +90,3 @@ button:hover {
   background-color: #ffff00;
 }
 
-
-@media (max-width: 700px) {
-  #grid {
-    grid-template-columns: repeat(15, 25px);
-  }
-  .cell {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-@media (max-width: 450px) {
-  #grid {
-    grid-template-columns: repeat(10, 20px);
-  }
-  .cell {
-    width: 20px;
-    height: 20px;
-  }
-  button {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
-    min-width: 90px;
-  }
-  h1 {
-    font-size: 1.4rem;
-  }
-}
