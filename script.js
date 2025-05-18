@@ -90,14 +90,14 @@ function drawPath(prev) {
 
 //reset
 function resetGrid() {
-  const cells = document.querySelectorAll('.cell');
-  cells.forEach(cell => {
-    cell.className = 'cell'; // removes all other classes
-  });
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const cell = cells[r][c];
+      cell.className = "cell"; 
+    }
+  }
 
-  // Optional: reset internal state variables if you have them
-  startCell = null;
-  endCell = null;
-  isStartSet = false;
-  isEndSet = false;
+  // Reset start and end points
+ start = null;
+end = null;
 }
