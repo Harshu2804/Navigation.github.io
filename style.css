@@ -1,24 +1,39 @@
+
 body {
   text-align: center;
   font-family: Arial, sans-serif;
- 
+  margin: 0;
+  padding: 0 1rem;
+  background: #f5f7fa; 
 }
 
-h1{
-    font-family:'Courier New', Courier, monospace;
-    border : 1px solid #ddd;
-    border-style: none;
-    border-radius: 10px;
-    color: white;
-    padding: 15px;
-    background-color:  #ff6b6b;
-    margin-left: 550px ;
-    width: fit-content;
 
+h1 {
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 10px;
+  color: white;
+  padding: 15px;
+  background-color: #ff6b6b;
+  margin: 1rem auto;
+  width: fit-content;
+  max-width: 90%;
+  box-sizing: border-box;
+  font-size: 1.8rem;
 }
+
+
+#buttons-container {
+  margin: 1rem auto 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+
 button {
+  margin : 15px;
   padding: 0.8rem 2rem;
-  margin: 0.5rem;
   font-size: 1rem;
   border: none;
   border-radius: 12px;
@@ -27,6 +42,7 @@ button {
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 120px;
 }
 
 button:hover {
@@ -34,16 +50,18 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
+
 #grid {
   display: grid;
   grid-template-columns: repeat(20, 30px);
- 
-  margin: 20px auto;
+  margin: 0 auto;
   width: fit-content;
- border-radius: 12px;
+  border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-   padding: 1rem;
+  padding: 1rem;
+  overflow-x: auto; /* horizontal scroll for small screens */
 }
+
 
 .cell {
   width: 30px;
@@ -51,12 +69,13 @@ button:hover {
   border: 1px solid #ddd;
 }
 
+
 .cell.start {
-  background-color: #00e676; /* bright green */
+  background-color: #00e676;
 }
 
 .cell.end {
-  background-color: #ff1744; /* vibrant red */
+  background-color: #ff1744;
 }
 
 .cell.wall {
@@ -64,9 +83,38 @@ button:hover {
 }
 
 .cell.visited {
-  background-color: #00b0ff; /* sky blue */
+  background-color: #00b0ff;
 }
 
 .cell.path {
-  background-color: #ffff00; /* bright yellow */
+  background-color: #ffff00;
+}
+
+
+@media (max-width: 700px) {
+  #grid {
+    grid-template-columns: repeat(15, 25px);
+  }
+  .cell {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (max-width: 450px) {
+  #grid {
+    grid-template-columns: repeat(10, 20px);
+  }
+  .cell {
+    width: 20px;
+    height: 20px;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    min-width: 90px;
+  }
+  h1 {
+    font-size: 1.4rem;
+  }
 }
